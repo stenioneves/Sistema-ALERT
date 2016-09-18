@@ -4,9 +4,17 @@ import org.alert.models.Morador;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-
+/**
+ * Classe para a validação dos campos da tela de login.
+ * @author Stenio Neves Siva 
+ *
+ */
 public class LoginValidator implements Validator {
-
+	
+    /**
+     * Método da Interface Validator do Spring para verificar se a 
+     * classe no parametro é igual a classe de suporte.
+     */
 	@Override
 	public boolean supports(Class<?> classe) {
 		return Morador.class.equals(classe);
