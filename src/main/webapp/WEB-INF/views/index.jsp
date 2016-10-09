@@ -1,30 +1,26 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <spring:url value="resources/assets/ico/favicon.png" var="favicon"></spring:url>
-    <link rel="shortcut icon" href="${favicon}">
+    <link rel="shortcut icon" href="resources/assets/ico/favicon.png">
 
     <title>Index</title>
 
     <!-- Bootstrap core CSS -->
-    
     <link href="resources/assets/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <spring:url value="resources/assets/css/main.css" var="main"></spring:url>
-    <link href="${main}" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-	<spring:url value="resources/assets/js/jquery.min.js" var="jquery"></spring:url>
-    <script src="${jquery}"></script>
-    <spring:url value="resources/assets/js/modernizr.custom.js" var="modernizr"></spring:url>
-	<script src="${modernizr}"></script>
+    <link href="resources/assets/css/main.css" rel="stylesheet">
+	<link rel="stylesheet" href="resources/assets/css/font-awesome.min.css">
+
+    <script src="resources/assets/js/jquery.min.js"></script>
+	<script src="resources/assets/js/modernizr.custom.js"></script>
 	
 
 	
@@ -43,16 +39,13 @@
 	<!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
-			<h1 class="logo"><a href="/alert/">Alert</a></h1>
+			<h1 class="logo"><a href="index.html#home">Alert</a></h1>
 			<i class="icon-remove menu-close"></i>
 			<a href="#home" class="smoothScroll">Home</a>
-			<a href="#sobre" class="smoothScroll">Venha para o ALert</a>
-			<a href="#informacao" class="smoothScroll">O que ele pode ajudar</a>
-			<a href="#acesso" class="smoothScroll">Acesse</a>
-			<a href="#"><i class="icon-facebook"></i></a>
-			<a href="#"><i class="icon-twitter"></i></a>
-			<a href="#"><i class="icon-dribbble"></i></a>
-			<a href="#"><i class="icon-envelope"></i></a>
+			<a href="#about" class="smoothScroll">Venha para o ALert</a>
+			<a href="#portfolio" class="smoothScroll">A sua ajuda</a>
+			<a href="#contact" class="smoothScroll">Acesse</a>
+			
 		</div>
 		
 		<!-- Menu button -->
@@ -66,13 +59,13 @@
 	<div id="headerwrap">
 		<div class="container">
 			<div class="logo">
-				<img src="resources/assets/img/logo.png" >
+				<img src="resources/assets/img/logomedia.png">
 			</div>
 			<br>
 			<div class="row">
-				<h1>Nós somos o Alert</h1>
+				<h1></h1>
 				<br>
-				<h3>E o nosso objetivo é te ajudar. Quer saber como?</h3>
+				<h3></h3>
 				<br>
 				<br>
 				<div class="col-lg-6 col-lg-offset-3">
@@ -84,7 +77,7 @@
 	
 	
 	<!-- ========== ABOUT SECTION ========== -->
-	<section id="about" name="sobre"></section>
+	<section id="about" name="about"></section>
 	<div id="f">
 		<div class="container">
 			<div class="row">
@@ -95,9 +88,9 @@
 				<div class="col-lg-6 col-lg-offset-3">
 					<p>Estudos apontam que uma das principais causa de mortes por desatres naturais é causado pela falta de comunicação.</p>
 					<p>Milhares de pessoas morrem  por falta de informação ou por falta de alerta no momento correto e oportuno.</p>
-					<p>Nós do Alert trazemos uma solução para que essa barreira se torna cada vez menor. Nosso compromisso é levar a informação ao maior número de pessoas, conectando-as a uma base única de informação.<a href="http://twitter.com/BlackTie_co"></a>. Quer saber como isso irá funcionar?<a href="http://blacktie.co"></a></p>
+					<p>Nós do Alert trazemos uma solução para que essa barreira se torne cada vez menor. Nosso compromisso é levar a informação ao maior número de pessoas, conectando-as a uma base única de informação.<a href="http://twitter.com/BlackTie_co"></a>. Quer saber como isso irá funcionar?<a href="http://blacktie.co"></a></p>
 					<p>Faça seu cadastro, acesse e contribua!!!! </p>
-					<p><a href="cadastro" url="cadastro.html"><button type="button" class="btn btn-warning">Quero fazer parte disto</button></a></p>
+					<p><a href="cadastro.html" url="cadastro.html"><button type="button" class="btn btn-warning">Quero fazer parte disto</button></a></p>
 				</div>								
 			</div>
 		</div><!-- /container -->
@@ -105,7 +98,7 @@
 	
 
 	<!-- ========== CAROUSEL SECTION ========== -->	
-	<section id="portfolio" name="informacao"></section>
+	<section id="portfolio" name="portfolio"></section>
 	<div id="f">
 		<div class="container">
 			<div class="row centered">
@@ -118,20 +111,23 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
 							<div class="item active centered">
-								<img class="img-responsive" src="resources/assets/img/alagamentos.jpg" alt="">
+								<img class="img-responsive" src="resources/assets/img/s1.jpg" alt="">
 							</div>
 							
 							<div class="item centered">
-								<img class="img-responsive" src="resources/assets/img/chuvas.jpg" alt="">
+								<img class="img-responsive" src="resources/assets/img/s2.jpg" alt="">
 							</div>
 							<div class="item centered">
-								<img class="img-responsive" src="resources/assets/img/deslizamentos.jpg" alt="">
+								<img class="img-responsive" src="resources/assets/img/s3.jpg" alt="">
 							</div>
 							<div class="item centered">
-								<img class="img-responsive" src="resources/assets/img/deslizamentos2.jpg" alt="">
+								<img class="img-responsive" src="resources/assets/img/s4.jpg" alt="">
 							</div>
 							<div class="item centered">
-								<img class="img-responsive" src="resources/assets/img/chuvas.jpg" alt="">
+								<img class="img-responsive" src="resources/assets/img/s5.jpg" alt="">
+							</div>
+							<div class="item centered">
+								<img class="img-responsive" src="resources/ssets/img/s6.jpg" alt="">
 							</div>
 						</div>
 						<br>
@@ -141,6 +137,9 @@
 						    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
 						    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 						    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+						    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+						   
+						   
 						    
 						</ol>
 					</div>
@@ -150,7 +149,7 @@
 	</div>	<!-- f -->
 
 	<!-- ========== CONTACT SECTION ========== -->
-	<section id="contact" name="acesso"></section>
+	<section id="contact" name="contact"></section>
 	<div id="f">
 		<div class="container">
 			<div class="row">
@@ -160,7 +159,7 @@
 				<div class="col-lg-6 col-lg-offset-3">
 					<p><br/><br/></p>
 					<p></p>
-					<p><a href="login" url="login.html"><button type="button" class="btn btn-warning">Acesse o Alert</button></a></p>
+					<p><a href="login.html" url="login.html"><button type="button" class="btn btn-warning">Acesse o Alert</button></a></p>
 				</div>
 			</div>
 		</div>
@@ -177,3 +176,4 @@
 	<script src="resources/assets/js/main.js"></script>
 </body>
 </html>
+    

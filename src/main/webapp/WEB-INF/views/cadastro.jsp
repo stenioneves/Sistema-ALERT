@@ -251,7 +251,7 @@
 										<fieldset>
 
 										<!-- Form Name -->
-										<legend  id="legenda">Cadastro usuário</legend>
+										<legend  id="legenda">Cadastro Morador</legend>
 
 									<!-- Text input-->
 									<div class="form-group">

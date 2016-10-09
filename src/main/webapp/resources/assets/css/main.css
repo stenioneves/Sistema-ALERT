@@ -79,7 +79,7 @@ a:after {
    ========================================================================== */
 
 #headerwrap {
-	background: url(../img/comunicacao.jpg) no-repeat center top;
+	background: url(../img/capa.png) no-repeat center top;
 	margin-top: -10px;
 	padding-top:20px;
 	text-align:center;
@@ -150,7 +150,6 @@ a:after {
 
 #f img {
 	text-align: center;
-
 }
 
 
@@ -196,7 +195,7 @@ a:after {
 
 .menu img.logo {
 	margin: 20px 0;
-	max-width: 180px;
+	max-width: 160px;
 }
 
 .menu a {

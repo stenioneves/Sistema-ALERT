@@ -26,7 +26,6 @@ public class JPAConfiguration {
 		return em;
 	}
 
-	
 	@Bean
 	public	DataSource	dataSource(){
 			DriverManagerDataSource	dataSource= new	DriverManagerDataSource();
@@ -43,6 +42,7 @@ public class JPAConfiguration {
 		properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
 		properties.setProperty("hibernate.show_sql","true");
 		         return	properties;
+
 }
 	
 	@Bean

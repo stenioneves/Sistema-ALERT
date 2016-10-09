@@ -2,16 +2,17 @@
 html, body {
    height: 100%;
    font-family:verdana,arial,sans-serif;
-   color:#555555;
+   color:#f2f2f2;
 }
 
 .nav {
    font-family:Arial,sans-serif;
    font-size:13px;
+   color:#FFFFFF
 }
 
 a {
-  color:#222222;
+  color:#FFFFFF
 }
 
 a:hover {
@@ -59,7 +60,9 @@ hr {
     position: absolute;
     right: 0;
     top: 0;
-    background-color:#444444;
+    
+	 background-image: url("../img/fundo.jpg");
+	  
   /*
     background-image:url('/assets/example/bg_suburb.jpg');
     background-size:cover;
@@ -73,7 +76,7 @@ hr {
 
 .navbar-blue {
     border-width:0;
-	background-color:#3B5999;
+	background-color:#ffcc00;
     color:#ffffff;
     font-family:arial,sans-serif;
     top:0;
@@ -82,20 +85,21 @@ hr {
 }
 
 .navbar-blue li > a,.navbar-toggle  {
-   color:#efefef;
+   color:#000;
 }
 
 .navbar-blue .dropdown-menu li a {color:#2A4888;}
 .navbar-blue .dropdown-menu li > a {padding-left:30px;}
 
 .navbar-blue li>a:hover, .navbar-blue li>a:focus, .navbar-blue .open, .navbar-blue .open>a, .navbar-blue .open>a:hover, .navbar-blue .open>a:focus {
-   background-color:#2A4888;
-   color:#fff;
+   background-color:#fff;
+   color:#FFcc00;
 }
 
 
+
 #main {
-   background-color:#e9eaed;
+   background-color:rgba(0, 0, 0, 0.5);
    padding-left:0;
    padding-right:0;
 }
@@ -109,15 +113,16 @@ hr {
     padding:0px;
 	padding-top:15px;
 }
-
+/* menu lateral*/
 #sidebar, #sidebar a, #sidebar-footer a {
-    color:#ffffff;
-    background-color:transparent;
-	text-shadow:0 0 2px #000000;
+    color:#FFFFFF;
+    background-color:#4F4F4F;
+	/*texto side bar lateral*/
     padding-left:5px;
 }
+/*ao passar o cursor no menu lateral receberá esta configuração*/
 #sidebar .nav li>a:hover {
-    background-color:#393939;
+    background-color:#EEAD0E;
 }
 
 .logo {
@@ -166,7 +171,7 @@ h1,h2,h3 {
     color:#fffffe;
 }
 .btn-default {
-    color:#666666;
+    color:#1C1C1C;
     text-shadow:0 0 1px rgba(0,0,0,.3);
 }
 .form-control {
@@ -213,7 +218,6 @@ h1,h2,h3 {
 .panel-default .panel-heading {
   background-color:#f9fafb;
   color:#555555;
-
 }
 
 .col-sm-9.full {
@@ -294,36 +298,4 @@ small.text-muted {
   #sidebar, #sidebar a, #sidebar-footer a {
     padding-left:3px;
   }
-}
-figure.legenda{
-	border: 8px solid white;
-	box-shadow: 1px 1px 4px black;
-	position: relative;
-}
-figure.legenda img{
-
-	width: 100%;
-	height: 100%;
-}
-.panel-body{
-
-	border:8px solid white;
-	box-shadow: 1px 1px 4px black;
-	position: relative
-}
-figure.legenda figcaption{
-		position:absolute;
-	top:0px;
-	background-color:rgba(0,0,0,0.4);
-	color:white;
-	width:100%;
-	height:100%;
-	padding:10px;
-	box-sizing:border-box;
-	opacity:0;
-	transition:opacity 1s;
-
-}
-figure.legenda:hover figcaption{
-	opacity: 1;
 }
