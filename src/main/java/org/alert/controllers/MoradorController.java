@@ -27,8 +27,9 @@ public class MoradorController {
 	 * @return Cadastro
 	 */
 	 @RequestMapping("cadastro")
-	 public String formCadastro(){
-		 return "cadastro";
+	 public ModelAndView formCadastro(){
+		 ModelAndView modelAndView= new ModelAndView("cadastro");
+		 return modelAndView;
 	 }
 	
 	/**

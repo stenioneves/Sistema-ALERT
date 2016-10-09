@@ -29,11 +29,11 @@
 			<h1>Acesse</h1>
 			 ${erro}
 			<div>
-				<input type="text" name="emailMorador" placeholder="E-mail" required="" id="username" /><br>
+				<form:input type="text" path="emailMorador" placeholder="E-mail" required="" id="username" /><br>
 				<form:errors path="emailMorador"/>
 			</div>
 			<div>
-				<input type="password" name="senhaMorador" placeholder="Senha" required="" id="password" /><br>
+				<form:input type="password" path="senhaMorador" placeholder="Senha" required="" id="password" /><br>
 				<form:errors path="senhaMorador"/>
 			</div>
 			<div>

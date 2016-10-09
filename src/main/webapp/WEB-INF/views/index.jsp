@@ -127,7 +127,7 @@
 								<img class="img-responsive" src="resources/assets/img/s5.jpg" alt="">
 							</div>
 							<div class="item centered">
-								<img class="img-responsive" src="resources/ssets/img/s6.jpg" alt="">
+								<img class="img-responsive" src="resources/assets/img/s6.jpg" alt="">
 							</div>
 						</div>
 						<br>
@@ -138,7 +138,7 @@
 						    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 						    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
 						    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-						   
+						    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
 						   
 						    
 						</ol>

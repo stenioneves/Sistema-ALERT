@@ -38,7 +38,7 @@ public class AutenticacaoController {
 	 */
 	
 	@RequestMapping("login")
-	public ModelAndView formLogin(){
+	public ModelAndView formLogin(Morador morador){
 		ModelAndView modelAndView = new ModelAndView("login");
 		return modelAndView ;
 	}
@@ -53,7 +53,7 @@ public class AutenticacaoController {
 	public  ModelAndView efetuarLogin(@Valid Morador morador,BindingResult bindingResult,RedirectAttributes redirectAttributes){
 		//Questões de segurança.
 		if(bindingResult.hasErrors())
-			return formLogin();
+			return formLogin(morador);
 	 
 		// envia para o DAO onde irá obter a confimação método boolean e com if.
 		if(morador.getEmailMorador().equals("stenio@teste.com")&& (morador.getSenhaMorador().equals("123456")))
