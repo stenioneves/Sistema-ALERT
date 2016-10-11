@@ -115,11 +115,10 @@
 			<version>5.1.15</version>
 		</dependency>
 		<dependency>
-		<groupId>org.postgresql</groupId>
-		<artifactId>postgresql</artifactId>
-		<version>9.4.1208.jre7</version>
-		
-		</dependency>
+    		<groupId>org.postgresql</groupId>
+    		<artifactId>postgresql</artifactId>
+   			 <version>9.4.1211.jre7</version>
+    	</dependency>
 		<!-- JSR 303 com Hibernate Validator -->
 		<dependency>
 		<groupId>javax.validation</groupId>
