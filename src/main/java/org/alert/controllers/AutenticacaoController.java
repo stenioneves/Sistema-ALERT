@@ -3,8 +3,10 @@ package org.alert.controllers;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
+import org.alert.daos.MoradorDAO;
 import org.alert.models.Morador;
 import org.alert.validation.LoginValidator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -21,7 +23,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 @Transactional
 public class AutenticacaoController {
-	
+	@Autowired
+	 private MoradorDAO moradorDAO;
 	/**
 	 * Método para indicar ao Spring qual validar irá usar.
 	 * @param binder
@@ -54,9 +57,10 @@ public class AutenticacaoController {
 		//Questões de segurança.
 		if(bindingResult.hasErrors())
 			return formLogin(morador);
+		Morador moradorc=moradorDAO.consultarMorador(morador);
 	 
-		// envia para o DAO onde irá obter a confimação método boolean e com if.
-		if(morador.getEmailMorador().equals("stenio@teste.com")&& (morador.getSenhaMorador().equals("123456")))
+		// envia para o DAO onde irá obter a confimação método boolean e com if. Método Hard
+		if(morador.getEmailMorador().equals(moradorc.getEmailMorador()) && morador.getSenhaMorador().equals(moradorc.getSenhaMorador()))
 					
 			return new ModelAndView("redirect:/principal");
 		
