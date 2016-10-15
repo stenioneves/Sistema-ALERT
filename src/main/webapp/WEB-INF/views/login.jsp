@@ -29,7 +29,7 @@
 			<h1>Acesse</h1>
 			 ${erro}
 			<div>
-				<form:input type="text" path="emailMorador" placeholder="E-mail" required="" id="username" /><br>
+				<form:input type="text" path="emailMorador" placeholder="E-mail de acesso" required="" id="username" title="Digite o seu e-mail cadastrado."/><br>
 				<form:errors path="emailMorador"/>
 			</div>
 			<div>

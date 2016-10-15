@@ -16,6 +16,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
+/***
+ * Classe que representa os dados dos Usuarios/Moradores do sistema e seus métodos.
+ * @author stenio
+ *
+ */
+
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
 @Table(name="morador")
@@ -58,6 +67,8 @@ public class Morador implements Serializable {
     @ManyToOne
 	@JoinColumn(name="idGrupo")
      private Grupo grupo;
+   
+    
     
    
 	public String getSituacaoCasa() {

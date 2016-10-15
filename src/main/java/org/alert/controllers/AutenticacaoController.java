@@ -1,5 +1,6 @@
 package org.alert.controllers;
 
+import javax.persistence.NoResultException;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -55,20 +56,31 @@ public class AutenticacaoController {
 	@RequestMapping(value="efetuarLogin",method=RequestMethod.POST)
 	public  ModelAndView efetuarLogin(@Valid Morador morador,BindingResult bindingResult,RedirectAttributes redirectAttributes){
 		//Questões de segurança.
+		//Verifica se não erro de preenchimento no formulario.
 		if(bindingResult.hasErrors())
 			return formLogin(morador);
-		Morador moradorc=moradorDAO.consultarMorador(morador);
-	 
-		// envia para o DAO onde irá obter a confimação método boolean e com if. Método Hard
-		if(morador.getEmailMorador().equals(moradorc.getEmailMorador()) && morador.getSenhaMorador().equals(moradorc.getSenhaMorador()))
-					
-			return new ModelAndView("redirect:/principal");
+		try{
+			//Trecho monitorado devido a exceção do Hibernate.
+			
+		Morador moradorc=moradorDAO.consultarMorador(morador);//consulta no banco de dadospara verificar o usuário
 		
-		else
-		{
-			redirectAttributes.addFlashAttribute("erro"," <div class=\"alert alert-danger\">Usuário ou senha inválido </div>");
+		
+		// envia para o DAO onde irá obter a confimação método boolean e com if. Método Hard
+				if(morador.getEmailMorador().equals(moradorc.getEmailMorador()) && morador.getSenhaMorador().equals(moradorc.getSenhaMorador()))
+							
+					return new ModelAndView("redirect:/principal");
+				
+				else
+				{ // Senha inválida 
+					redirectAttributes.addFlashAttribute("erro"," <div class=\"alert alert-danger\"> Senha inválida </div>");
+					return new ModelAndView("redirect:login");
+				}
+		}catch(NoResultException e){
+			// Usuário inexistente.
+			redirectAttributes.addFlashAttribute("erro"," <div class=\"alert alert-danger\">Usuário não encontrado no sistema </div>");
 			return new ModelAndView("redirect:login");
 		}
+		
  }
 	
 	

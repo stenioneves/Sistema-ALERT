@@ -23,9 +23,11 @@ public class LoginValidator implements Validator {
 	@Override
 	public void validate(Object target, Errors errors) {
 		boolean ev= true;
+		
 		ValidationUtils.rejectIfEmpty(errors, "emailMorador", "field.required.email");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors,"senhaMorador","field.required.senha");
 		 Morador morador =(Morador)target;
+		 
 		 for(int i=0; i<morador.getEmailMorador().length();i++){
 			 //Character temp;
 			 if(morador.getEmailMorador().charAt(i)=='@')
@@ -36,6 +38,12 @@ public class LoginValidator implements Validator {
 		 }
 		if(ev)
 			errors.rejectValue("emailMorador", "field.required.emailValidation");//E-mail fora do padrão.
+	
+	    //if(morador.getNomeMoradorUsuario().length()<6 && morador.getNomeMoradorUsuario().length()<15)
+	    	
+	    	//errors.rejectValue("nomeMoradorUsuario","field.required.usuarioNomeValidation");
 	}
+	
+	
 
 }

@@ -9,7 +9,7 @@ public static void main(String[] args){
 	
 	MoradorDAO maMoradorDAO = new MoradorDAO();
 	Morador morador = new Morador();
-	 morador.setEmailMorador("stenio@teste.com");
+	 morador.setNomeMoradorUsuario("stenioneves");;
 	morador.setSenhaMorador("123456");
 	 Morador m =maMoradorDAO.consultarMorador(morador);
 

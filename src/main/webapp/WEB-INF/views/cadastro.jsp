@@ -77,7 +77,7 @@
 
 										<!-- Form Name -->
 										<legend>cadastro de Morador</legend>
-
+										
 									<!-- Text input-->
 									<div class="form-group">
 									  <label class="col-md-4 control-label" for="textinput">Nome </label>  
@@ -212,7 +212,7 @@
 									  <label class="col-md-4 control-label" for="selectbasic">Situação da casa</label>
 									  <div class="col-md-4">
 									    <select id="selectbasic" name="situacaoCasa" class="form-control">
-									      <option value="Própria">Própria</option>
+									      <option value="Propria">Própria</option>
 									      <option value="Alugada">Alugada</option>
 									      <option value="Cedida">Cedida</option>
 									    </select>

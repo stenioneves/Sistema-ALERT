@@ -1,13 +1,11 @@
 package org.alert.daos;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import org.alert.models.Morador;
 import org.springframework.stereotype.Repository;
-
-import antlr.CodeGenerator;
 /***
  *  Classe Data Object Access para entidade Morador.
  * @author stenio neves
@@ -33,17 +31,15 @@ public class MoradorDAO {
 	 * @param morador
 	 * @return morador
 	 */
-	public Morador consultarMorador( Morador morador){
+	// Verificado que o Hibernete lança um exceção quando consulta não retorna dados, logo esse métedo lança a exceção para a classe que que o chamou Autenticação
+	public Morador consultarMorador( Morador morador)throws NoResultException{
 	
-		  try{
-		  return manager.createQuery("select distinct(m) from Morador m where emailMorador="+morador.getEmailMorador()
-		  +"and"+ morador.getSenhaMorador(),Morador.class)
+		 
+		  return manager.createQuery("from Morador m where m.emailMorador=:email"
+		  ,Morador.class).setParameter("email",morador.getEmailMorador())
 				  .getSingleResult();
 		 
-		  }catch(NullPointerException e){ // Captura de exceção somente para o teste Unitário
-			  System.out.println("Voce está com serios problemas para consulta !!!!");
-			  return  morador;
-		  }
+		  
 		
 	}
 	
