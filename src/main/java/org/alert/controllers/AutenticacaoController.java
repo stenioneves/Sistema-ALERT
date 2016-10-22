@@ -1,6 +1,7 @@
 package org.alert.controllers;
 
 import javax.persistence.NoResultException;
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -54,7 +55,7 @@ public class AutenticacaoController {
 	
 	
 	@RequestMapping(value="efetuarLogin",method=RequestMethod.POST)
-	public  ModelAndView efetuarLogin(@Valid Morador morador,BindingResult bindingResult,RedirectAttributes redirectAttributes){
+	public  ModelAndView efetuarLogin(@Valid Morador morador,BindingResult bindingResult,RedirectAttributes redirectAttributes, HttpSession sessao){
 		//Questões de segurança.
 		//Verifica se não erro de preenchimento no formulario.
 		if(bindingResult.hasErrors())
@@ -67,9 +68,11 @@ public class AutenticacaoController {
 		
 		// envia para o DAO onde irá obter a confimação método boolean e com if. Método Hard
 				if(morador.getEmailMorador().equals(moradorc.getEmailMorador()) && morador.getSenhaMorador().equals(moradorc.getSenhaMorador()))
-							
+				{		
+					
+					sessao.setAttribute("morador", moradorc);
 					return new ModelAndView("redirect:/principal");
-				
+				}
 				else
 				{ // Senha inválida 
 					redirectAttributes.addFlashAttribute("erro"," <div class=\"alert alert-danger\"> Senha inválida </div>");

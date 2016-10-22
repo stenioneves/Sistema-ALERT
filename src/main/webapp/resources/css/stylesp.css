@@ -299,3 +299,11 @@ small.text-muted {
     padding-left:3px;
   }
 }
+h3#teste{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color: blue;
+
+}
+.texto{
+  color: black;
+}

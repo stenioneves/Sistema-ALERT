@@ -117,9 +117,10 @@
                                 <div class="panel-body">
                                  
                                   <h1>Texo Publicação</h1>
-
+                                  <div class="texto">
+									<h3 id="teste">${morador.nomeMorador}</h3>
                                   
-                                  
+                                  </div>
                                   <p>
                                     <img src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s28" width="28px" height="28px">
                                   </p>
