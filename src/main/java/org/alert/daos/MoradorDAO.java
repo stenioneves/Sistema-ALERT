@@ -1,5 +1,7 @@
 package org.alert.daos;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -43,4 +45,8 @@ public class MoradorDAO {
 		
 	}
 	
+	public List<Morador> listarMorador(){
+		return manager.createQuery("select	distinct(m)	from Morador m",Morador.class).getResultList();
+		
+	}
 }
