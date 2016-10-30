@@ -49,4 +49,7 @@ public class MoradorDAO {
 		return manager.createQuery("select	distinct(m)	from Morador m",Morador.class).getResultList();
 		
 	}
+	 public void alterMorador(Morador morador){
+		 //manager.creA
+	 }
 }
