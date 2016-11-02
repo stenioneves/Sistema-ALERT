@@ -64,9 +64,9 @@ public class Morador implements Serializable {
 	private  String emailMorador;
     @Column
     private String situacaoCasa;
-    @ManyToOne
+	@ManyToOne
 	@JoinColumn(name="idGrupo")
-     private Grupo grupo;
+   private Grupo grupo;
    
     
     
@@ -173,6 +173,15 @@ public class Morador implements Serializable {
 	public void setQtdaMorador(int qtdaMorador) {
 		this.qtdaMorador = qtdaMorador;
 	}
+
+	public Grupo getGrupo() {
+		return grupo;
+	}
+
+    public void setGrupo(Grupo grupo) {
+		this.grupo = grupo;
+	}
+	
 	
 	
 	

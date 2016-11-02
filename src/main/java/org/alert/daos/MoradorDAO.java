@@ -52,4 +52,18 @@ public class MoradorDAO {
 	 public void alterMorador(Morador morador){
 		 //manager.creA
 	 }
+	 
+	 public  List<Morador> consultarMoradorGrupo( Morador morador)throws NoResultException{
+		 System.out.println(morador.getGrupo().getIdGrupo());
+		 
+		  return manager.createQuery("from Morador m  where m.grupo.idGrupo=:idGrupo"
+		  ,Morador.class).setParameter("idGrupo",morador.getGrupo().getIdGrupo())
+				  .getResultList();
+		 
+		 
+		  
+		
+	}
+	 
+	 
 }

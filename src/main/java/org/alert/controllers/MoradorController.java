@@ -44,7 +44,7 @@ public class MoradorController {
 		  moradorDAO.cadastrar(morador);
 		 return "redirect:/grupo/selecionarGrupo";
 	 }
-	@RequestMapping(value="adm", method=RequestMethod.GET)
+	@RequestMapping(value="morador", method=RequestMethod.GET)
     @ResponseBody
 	public List<Morador> ListarMorador(){
 		return moradorDAO.listarMorador();

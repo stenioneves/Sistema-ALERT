@@ -42,6 +42,18 @@ public class Grupo {
 	public void setNivelRiscoBairro(String nivelRiscoBairro) {
 		this.nivelRiscoBairro = nivelRiscoBairro;
 	}
+	public int getIdGrupo() {
+		return idGrupo;
+	}
+	public void setIdGrupo(int idGrupo) {
+		this.idGrupo = idGrupo;
+	}
+	public AdministradorGrupo getAdministradorGrupo() {
+		return administradorGrupo;
+	}
+	public void setAdministradorGrupo(AdministradorGrupo administradorGrupo) {
+		this.administradorGrupo = administradorGrupo;
+	}
 	
 	
 	

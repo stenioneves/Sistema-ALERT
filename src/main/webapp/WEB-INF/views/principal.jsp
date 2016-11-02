@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf8"
     pageEncoding="utf8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="pt-br">
+<html lang="pt-br" ng-app="listarpublicacao">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
@@ -9,6 +9,9 @@
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<script src="resources/js/angular.js"></script>
+		<script src="resources/js/modules/listarmorador.js"></script>
+		<script src="resources/js/modules/listarmoradorCtrl.js"></script>
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -118,7 +121,9 @@
                                  
                                   <h1>Texo Publicação</h1>
                                   <div class="texto">
-									<h3 id="teste">${morador.nomeMorador}</h3>
+									<h3 id="teste">${morador.nomeMorador} </h3>
+									<h4 id="teste">${morador.grupo.idGrupo}</h4>
+									<h4 id="teste">${morador.grupo.nome}</h4>
                                   
                                   </div>
                                   <p>
