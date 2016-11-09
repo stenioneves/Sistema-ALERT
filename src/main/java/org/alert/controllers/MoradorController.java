@@ -39,7 +39,7 @@ public class MoradorController {
 	 * @param morador
 	 * @return redireciona para tela seleção de grupo.
 	 */
-	@RequestMapping("adicionarMorador")
+	@RequestMapping(value="adicionarMorador",method=RequestMethod.POST)
 	 public String adicionarMorador(Morador morador){
 		  moradorDAO.cadastrar(morador);
 		 return "redirect:/grupo/selecionarGrupo";
