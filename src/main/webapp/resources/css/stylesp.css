@@ -1,4 +1,9 @@
 /* custom template */
+h4#publica{
+	font-family: arial;
+	color: black;
+	
+}
 html, body {
    height: 100%;
    font-family:verdana,arial,sans-serif;
@@ -306,4 +311,20 @@ color: blue;
 }
 .texto{
   color: black;
+}
+div#estilo{
+	
+padding-top:3px;
+padding-bottom:3px;
+border: 0.5px solid rgba(0,0,0,0.5);
+
+background-color:#FFFFFF	;
+box-shadow: 15px 1px 1px rgba(0,0,0,0,9);
+text-shadow:1px 1px 1px rgba(0,0,0,0.6);
+	
+}
+div#estilo:h2{
+text-shadow:1px 1px 1px rgba(0,0,0,0.6);	
+	
+	
 }

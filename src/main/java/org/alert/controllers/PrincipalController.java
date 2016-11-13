@@ -25,11 +25,15 @@ public class PrincipalController {
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView inicio (
 			@ ModelAttribute("morador")Morador morador, RedirectAttributes redirectAttributes){
-		
-		
-		
 		ModelAndView modelAndView = new ModelAndView("principal");
+		 if(morador.getGrupo()== null){
+			modelAndView.addObject("inf", true); 
+			 
+		 }
+		
+		
 		modelAndView.getModel().put("morador", morador);
+		
 		return modelAndView;
 		
 	}

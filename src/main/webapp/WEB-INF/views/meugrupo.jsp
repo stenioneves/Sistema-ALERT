@@ -1,25 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-    <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="listarmoradorgrupo">
   <head>
   <!--<script type="text/javascript">
   alert("Seu cadastro foi realizado com sucesso!!");
   window.location="http://www.devmedia.com.br/";
 </script>-->
+<script  src="../resources/js/angular.js">
+</script>
+<script  src="../resources/js/modules/listarmorador.js">
+</script>
+<script  src="../resources/js/modules/listarmoradorCtrl.js">
+</script>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Escolha de Grupo</title>
+    <title>Meu Grupo</title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="resources/css/styles.css" rel="stylesheet">
+    <link href="../resources/css/styles.css" rel="stylesheet">
   </head>
-  <body background="resources/img/grid.png" bgproperties="fixed">
+  <body background="/img/grid.png" bgproperties="fixed">
       <div class="wrapper">
 
           <!-- tela completa-->
@@ -45,7 +50,7 @@
                           </form>
                             <ul class="nav navbar-nav">
                               <li>
-                                <a href="Principal.html"><i "></i> Tela Inicial</a>
+                                <a href="Principal.html"><i "></i> Publicações</a>
                               </li>
 
                             </ul>
@@ -67,9 +72,12 @@
                                       <fieldset>
                                           <div class="row">
                                             <div class="col-sm-24">
-                                               <h1>Escolha um Grupo</h1>
+                                              <h5><strong>Nome Grupo(zona):</strong>&nbsp ${morador.grupo.nome}</h5>
+                                               <h5><strong>Bairro :</strong>&nbsp ${morador.grupo.bairro}</h5>
+                                               <h5><strong>Risco Bairro:</strong>&nbsp ${morador.grupo.nivelRiscoBairro}</h5>
+                                               
                                                   
-                  
+                                               
                     <fieldset>
 
                         <!-- Form Name -->
@@ -77,22 +85,14 @@
 
                         <!-- Multiple Radios -->
                         <div class="form-group">
-                           <label class="col-md-4 control-label" for="radios">Melhores Grupos para sua localidade:</label>
+                           <label class="col-md-4 control-label" for="radios">Integrantes do seu grupo:</label>
                              <div class="col-md-4">
                              
 
-                          <ul class="form-group">
-                              <li>
-                                <a href="Principal.html"><i "></i> grupo 1</a>
-                              </li>
-
-                              <li>
-                                <a href="Sobre o Alert.html"><i class=></i> grupo 2</a>
-                              </li>
-                      
-                              <li>
-                                <a href="#postModal" role="button" data-toggle="modal"><i class=></i>grupo 3</a>
-                              </li>
+                          <ul class="form-group" ng-controller="listarmoradorgrupoCtrl">
+                              <li ng-repeat="morador in listarmoradorg">
+                              ${morador.nomeMorador}
+                          
 
                             </ul>
  
@@ -141,7 +141,7 @@
 </div>
   <!-- script references -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="resorces/js/bootstrap.min.js"></script>
-    <script src="resources/js/scripts.js"></script>
+    <script src="../resources/js/bootstrap.min.js"></script>
+    <script src="../resources/js/scripts.js"></script>
   </body>
 </html>

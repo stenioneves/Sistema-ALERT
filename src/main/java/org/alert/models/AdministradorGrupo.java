@@ -21,7 +21,8 @@ public class AdministradorGrupo extends Morador {
 	public void autorizarMorador(Morador morador){
 		
 	}
-	 public void publicarAlerta(Publicacao publicacao){
+	 public void publicarAlerta(Alerta alerta){
+		 //
 		 
 		 
 	 }

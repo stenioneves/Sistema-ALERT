@@ -23,7 +23,7 @@ public class Publicacao {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idPublicacao;
 	@Column
-	@Max(value=30)
+	
 	private String tituloPublicacao;
 	@Lob
 	private  String textoPublicacao;
@@ -51,6 +51,18 @@ public class Publicacao {
 	}
 	public void setDataPublicacao(Date dataPublicacao) {
 		this.dataPublicacao = dataPublicacao;
+	}
+	public int getIdPublicacao() {
+		return idPublicacao;
+	}
+	public void setIdPublicacao(int idPublicacao) {
+		this.idPublicacao = idPublicacao;
+	}
+	public Morador getMorador() {
+		return morador;
+	}
+	public void setMorador(Morador morador) {
+		this.morador = morador;
 	}
 
 }
