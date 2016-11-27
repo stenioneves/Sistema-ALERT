@@ -1,6 +1,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core"	prefix="c"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -72,7 +74,7 @@
                             
                                <div class="panel panel-default">
 
-                                      <form class="form-horizontal"method="post" action="adicionarMorador">
+                                      <form class="form-horizontal" method="POST" action="${spring:mvcUrl('MC#adicionarMorador').build()}"  >
 										<fieldset>
 
 										<!-- Form Name -->
@@ -120,7 +122,7 @@
 									<div class="form-group">
 									  <label class="col-md-4 control-label" for="textinput">Data de nascimento</label>  
 									  <div class="col-md-6">
-									  <input id="textinput" name="dataNascMorador" type="date" placeholder="Digite sua data de nascimento" class="form-control input-md" required="" title="Formato DD/MM/AAAA" pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d$">
+									  <input id="textinput" name="dataNascMorador" type="date" placeholder="Digite sua data de nascimento" class="form-control input-md" required="" title="Formato DD/MM/AAAA" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$">
 									    
 									  </div>
 									</div>
@@ -139,8 +141,8 @@
 									<div class="form-group">
 									  <label class="col-md-4 control-label" for="textinput">E-mail</label>  
 									  <div class="col-md-6">
-									  <input id="textinput" name="emailMorador" type="email" placeholder="Digite seu e-mail" class="form-control input-md" required="" title="Seu e-mail">
-									    
+									  <input type="text"  name="emailMorador"  placeholder="Digite seu e-mail" class="form-control input-md" required="" title="Seu e-mail" id="textinput"/>
+									   
 									  </div>
 									</div>
 
@@ -232,7 +234,7 @@
 
 									
 
-                  <form class="form-horizontal">
+               
 
 
                 <!-- Password input-->

@@ -4,17 +4,19 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
  <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="listarpublicacao">
+<html lang="pt-br" ng-app="listarpublicacao" ng-controller="listarpublicacaoCtrl">
 	<head>
 	<script src="resources/js/angular.js"></script>
-		<script src="resources/js/modules/listarmorador.js"></script>
-		<script src="resources/js/modules/listarmoradorCtrl.js"></script>
+		
+		<script src="resources/js/modules/pubCtrl.js"></script>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<title>Principal</title>
+		<link href="resources/css/w3.css" rel="stylesheet">
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -34,10 +36,10 @@
             	</ul>
                
                 <ul class="nav hidden-xs" id="lg-menu">
-                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> Meu perfil</a></li>
-                    <li><a href="biblioteca.html"><i class="glyphicon glyphicon-list"></i> Biblioteca</a></li>
-                    <li><a href="Quem Somos.html"><i class="glyphicon glyphicon-paperclip"></i> Quem somos</a></li>
-                    <li><a href="Sobre o Alert.html"><i class="glyphicon glyphicon-refresh"></i> Sobre o Alert</a></li>
+                    <li class="active"><a href="principal/meuperfil"><i class="glyphicon glyphicon-list-alt"></i> Meus Dados</a></li>
+                    <li><a href="procedimentos.html"><i class="glyphicon glyphicon-list"></i> Biblioteca</a></li>
+                    <li><a href="quemsomos.html"><i class="glyphicon glyphicon-paperclip"></i> Quem somos</a></li>
+                    <li><a href="sobre.html"><i class="glyphicon glyphicon-refresh"></i> Sobre o Alert</a></li>
                 </ul>
                 <ul class="list-unstyled hidden-xs" id="sidebar-footer">
                     <li>
@@ -85,7 +87,7 @@
                       </li>
                       
                       <li>
-                        <a href="#postModal" role="button" data-toggle="modal"> Sair</a>
+                        <a href="principal/sair" role="button" data-toggle="modal"> Sair</a>
                       </li>
                       <li>
                         
@@ -110,8 +112,8 @@
                          <div class="col-sm-8">
                            
                               <div class="panel panel-default">
-                                <div class="panel-thumbnail"><img src="resources/assets/example/bg_5.jpg" class="img-responsive"></div>
-                                <div class="panel-body" ng-controller="listarpublicacaoCtrl">
+                                
+                                <div class="panel-body" >
                                 ${msg}
                                 
                                 <c:set var="infg" scope="session" value="${inf}"/>
@@ -128,19 +130,20 @@
                                  
                                     <div class="texto">
 									<h3 id="teste">${morador.nomeMorador} </h3>
-									<h4 id="teste">${morador.grupo.idGrupo}</h4>
-									<h4 id="teste">${morador.grupo.nome}</h4>
+									<h4 id="teste"> <i class="fa fa-users" aria-hidden="true"></i>${morador.grupo.idGrupo}</h4>
+									<h4 id="teste"> <i class="fa fa-map" aria-hidden="true"></i> ${morador.grupo.nome}</h4>
                                   
-                                  </div>                          
+                                  </div>
+                                  <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?"/>                         
                                   <p>
-                                     <div id="central" ng-repeat="publicacao in publicacoes">
+                                     <div id="central" ng-repeat="publicacao in publicacoes | filter:criterioDeBusca">
                                      
                                      <div id="estilo">
-                                     <h3>{{publicacao.morador.nomeMorador}}</h3>
-                                     <h4 id="titulo">{{publicacao.tituloPublicacao}}</h4>
-                                     <h4>{{publicacao.textoPublicacao}}</h4>
+                                     <h3 style= "color:#e17910;"> <i class="fa fa-user"></i> {{publicacao.morador.nomeMorador}}</h3>
+                                     <h4 id="titulo" style="color:#34332e;">{{publicacao.tituloPublicacao}}&ensp;{{publicacao.dataPublicacao|date:'dd/MM/yyyy'}}</h4>
+                                     <h4 style="color:#34332e;">{{publicacao.textoPublicacao}}</h4>
                                      
-                                     
+                                     <a href="#postModal2" role="button" data-toggle="modal"><button  ng-click="editer(publicacao)"> Alterar</button></a><a href="excluirPub/{{publicacao.idPublicacao}}"><button> Excluir</button></a>
                                      
                                      </div>
                                      <br>
@@ -239,8 +242,42 @@
    </form>
   </div>
 </div>
+
+
+
+<div id="postModal2" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <form class="form center-block"   action="${spring:mvcUrl('PC#editarpublicacao').build()}" method="post" >
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+       <h4 id="publica">Publicação Editar</h4>
+      </div>
+       
+      <div class="modal-body">
+          
+           <div class="form-group">
+            <input type="text" name="idPublicacao" ng-model="publicacao.idPublicacao" class="form-control input-lg">
+           
+            <input type="text"  name="tituloPublicacao" ng-model ="publicacao.tituloPublicacao" class="form-control input-lg" placeholder="Digite um titulo da sua publicação">
+           </div>
+            <div class="form-group">
+             
+              <textarea name="textoPublicacao" ng-model="publicacao.textoPublicacao" class="form-control input-lg" autofocus="" placeholder="Digite o texto da sua publicação"></textarea>
+            </div>
+           </form>
+      </div>
+      <div class="modal-footer">
+      <input type="submit" value="alterar Postagem">
+      </div>
+       </form>
+  </div>
+  
+  </div>
+    
+</div>
 	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="resources/js/jquery2.min.js"></script>
 		<script src="resources/js/bootstrap.min.js"></script>
 		<script src="resources/js/scripts.js"></script>
 	</body>

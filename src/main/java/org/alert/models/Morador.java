@@ -28,7 +28,7 @@ import javax.validation.constraints.Min;
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
 @Table(name="morador")
-public class Morador implements Serializable {
+public class Morador  {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idMorador;

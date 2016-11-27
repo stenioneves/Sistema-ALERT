@@ -5,20 +5,24 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.alert.controllers.view.PublicacaoGeralGrupo;
 import org.alert.daos.MoradorDAO;
 import org.alert.daos.PublicacaoDAO;
 import org.alert.models.Morador;
 import org.alert.models.Publicacao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
 
 @Controller
 @Transactional
@@ -78,6 +82,39 @@ public class PublicacaoController {
 		
 		return new ModelAndView("redirect:/principal");
 	}
+     @RequestMapping(value="editarp", method=RequestMethod.POST)
+   
+   public ModelAndView editarpublicacao( Publicacao publicacao, RedirectAttributes redirectAttributes){
+    	 
+	  publicacaoDAO.editarPublicacao(publicacao);
+	  
+	  redirectAttributes.addFlashAttribute("msg", "<div class=\"alert alert-success fade in\">"
+				+ "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Successo!</strong> "
+				+ "Sua alteraçao foi realizada.</div>"
 
+  
+  );
+	  return new ModelAndView("redirect:/principal");
+	   
+   }
+     
+      @RequestMapping(value="excluirPub/{id}")
+     public ModelAndView excluirpublicacao(@PathVariable("id")int id, RedirectAttributes redirectAttributes ){
+    	  
+    	 publicacaoDAO.excluirPubId(id); 
+    	 
+    	 redirectAttributes.addFlashAttribute("msg", "<div class=\"alert alert-danger fade in\">"
+ 				+ "<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Successo!</strong> "
+ 				+ "Exclusão Efetuada.</div>"
 
+   
+   );
+    	 
+    	 return new ModelAndView("redirect:/principal"); 
+    	 
+     }
+     
+     
+     
+     
 }

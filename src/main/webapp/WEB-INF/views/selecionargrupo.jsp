@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
     <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,7 @@
     <![endif]-->
     <link href="resources/css/styles.css" rel="stylesheet">
   </head>
-  <body background="resources/img/grid.png" bgproperties="fixed">
+  <body background="">
       <div class="wrapper">
 
           <!-- tela completa-->
@@ -69,7 +70,7 @@
                                             <div class="col-sm-24">
                                                <h1>Escolha um Grupo</h1>
                                                   
-                  
+                            
                     <fieldset>
 
                         <!-- Form Name -->
@@ -82,17 +83,13 @@
                              
 
                           <ul class="form-group">
-                              <li>
-                                <a href="Principal.html"><i "></i> grupo 1</a>
-                              </li>
-
-                              <li>
-                                <a href="Sobre o Alert.html"><i class=></i> grupo 2</a>
-                              </li>
-                      
-                              <li>
-                                <a href="#postModal" role="button" data-toggle="modal"><i class=></i>grupo 3</a>
-                              </li>
+                              <c:forEach items="${grupos}" var="grupo">
+                              ${grupo.nome}<a href="grupo/selecionarGrupo/${grupo.idGrupo}" role="button" data-toggle="modal">Selecionar</a>
+                              
+                              
+                              
+                              
+                              </c:forEach>
 
                             </ul>
  

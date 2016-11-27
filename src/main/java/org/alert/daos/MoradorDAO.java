@@ -65,5 +65,18 @@ public class MoradorDAO {
 		
 	}
 	 
+	 public Morador consultaId(int id)throws NoResultException {
+		 
+		  return manager.createQuery("from Morador m where m.idMorador=:id",Morador.class).setParameter("id", id).getSingleResult();
+	 }
+	 
+	 public void excluirMorador(Morador morador){
+		  
+		 manager.createQuery("delete Morador where idMorador=:id").setParameter("id", morador.getIdMorador()).executeUpdate();
+		
+		 
+		   
+		 
+	 }
 	 
 }

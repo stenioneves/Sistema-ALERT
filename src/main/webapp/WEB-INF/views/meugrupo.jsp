@@ -90,8 +90,8 @@
                              
 
                           <ul class="form-group" ng-controller="listarmoradorgrupoCtrl">
-                              <li ng-repeat="morador in listarmoradorg">
-                              ${morador.nomeMorador}
+                              <div ng-repeat="morador in listarmoradorg">
+                              <li>{{morador.nomeMorador}}</li></div>
                           
 
                             </ul>

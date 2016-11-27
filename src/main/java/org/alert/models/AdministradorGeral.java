@@ -13,12 +13,15 @@ import javax.validation.constraints.Min;
 @Table(name="administradorGeral")
 public class AdministradorGeral {
   @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
+  //@GeneratedValue(strategy=GenerationType.AUTO)
   private int matriculaFuncional;
+  
+  
   @Column(name="nomeAdministradorGeral")
-  @Max(value=40)
-  @Min(value=3)
   private String nome;
+  
+  @Column(name="senhaAdm")
+  private String senhaAdm;
 
   
   public int getMatriculaFuncional() {
@@ -32,6 +35,12 @@ public class AdministradorGeral {
 }
   public void setNome(String nome) {
 	this.nome = nome;
+}
+public String getSenhaAdm() {
+	return senhaAdm;
+}
+public void setSenhaAdm(String senhaAdm) {
+	this.senhaAdm = senhaAdm;
 }	
 	
 

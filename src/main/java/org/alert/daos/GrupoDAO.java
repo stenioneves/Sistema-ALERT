@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.alert.models.Grupo;
+import org.alert.models.Morador;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -34,4 +35,13 @@ public class GrupoDAO {
 		
 	}
 
+ public List<Grupo>listarGrupoPorBairro(Morador morador){
+	 return manager.createQuery("from Grupo g where g.bairro=:bairro",Grupo.class).
+			 setParameter("bairro", morador.getBairroEnderecoMorador()).getResultList();
+	 
+ }
+  public void alterarDadosGrupo(Grupo grupo){
+	  manager.createNativeQuery("UPDATE grupo SET bairro=:bai,nivelRiscoBairro=:risco,nome=:nom WHERE idGrupo=:id");
+	  
+  }
 }

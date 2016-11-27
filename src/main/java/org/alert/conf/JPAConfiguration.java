@@ -29,17 +29,18 @@ public class JPAConfiguration {
 	@Bean
 	public	DataSource	dataSource(){
 			DriverManagerDataSource	dataSource= new	DriverManagerDataSource();
-			dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-			dataSource.setUrl("jdbc:mysql://localhost:3306/alert");
-			dataSource.setUsername("root");
-			dataSource.setPassword("snt125801");
+			dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			dataSource.setUrl("jdbc:sqlserver://localhost:1433"+";databaseName="+"alert");
+			dataSource.setUsername("sa");
+			dataSource.setPassword("SnT@580#");
+			//dataSource.setUsername("alert");
 				return	dataSource;
 	}
 	 @Bean
 	private	Properties additionalProperties()	{
 		Properties	properties =new Properties();
 		properties.setProperty("hibernate.hbm2ddl.auto","update");
-		properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
+		properties.setProperty("hibernate.dialect","org.hibernate.dialect.SQLServerDialect");
 		properties.setProperty("hibernate.show_sql","true");
 		         return	properties;
 

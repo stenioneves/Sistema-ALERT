@@ -1,5 +1,8 @@
 package org.alert.daos;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -23,7 +26,21 @@ public class PublicacaoDAO {
 	
 	
 	public void publicar(Publicacao publicacao){
+		Calendar calendar = new GregorianCalendar();
+		Date date = new Date();
+		calendar.setTime(date);
+		
+		publicacao.setDataPublicacao((calendar.getTime()));
 		manager.persist(publicacao);
+	}
+	
+	public void editarPublicacao(Publicacao publicacao){
+	 manager.createNativeQuery("UPDATE publicacao SET tituloPublicacao=:titulo,textoPublicacao=:texto WHERE idPublicacao=:id")
+	 .setParameter("titulo",publicacao.getTituloPublicacao())
+	 .setParameter("texto",publicacao.getTextoPublicacao())
+	 .setParameter("id", publicacao.getIdPublicacao())
+	 .executeUpdate();
+		
 	}
 	
 	public void alterPublicacao (int idPublicacao){
@@ -39,5 +56,12 @@ public class PublicacaoDAO {
 	
 	public List<Publicacao> listarPublicacao(){
 		return manager.createQuery("select	distinct(p)	from Publicacao p",Publicacao.class).getResultList();
+	}
+	
+	public void excluirPubId( int id){
+		 
+		manager.createNativeQuery("DELETE FROM publicacao WHERE idPublicacao=:id ")
+		.setParameter("id", id).executeUpdate();
+		
 	}
 }

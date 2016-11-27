@@ -306,25 +306,39 @@ small.text-muted {
 }
 h3#teste{
 font-family: Verdana, Geneva, Tahoma, sans-serif;
-color: blue;
+color:  #e17910;
+text-decoration: underline;
 
 }
+
+h3#titulo{
+	text-color:#34332e;
+}
+
 .texto{
-  color: black;
+  color: #34332e;
 }
 div#estilo{
 	
 padding-top:3px;
 padding-bottom:3px;
-border: 0.5px solid rgba(0,0,0,0.5);
-
-background-color:#FFFFFF	;
+ border: 2px solid   #fcefc2;
+    border-radius: 5px;
+background-color: #fdec7d ;
 box-shadow: 15px 1px 1px rgba(0,0,0,0,9);
-text-shadow:1px 1px 1px rgba(0,0,0,0.6);
+
+
 	
 }
-div#estilo:h2{
-text-shadow:1px 1px 1px rgba(0,0,0,0.6);	
+
+.ng-binding{
 	
+}
+
+
+
+div#central h3{
+	
+	text-color:#34332e;
 	
 }

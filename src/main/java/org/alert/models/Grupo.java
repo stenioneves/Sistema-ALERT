@@ -21,9 +21,7 @@ public class Grupo {
 	private String bairro;
     @Column
 	private String nivelRiscoBairro;
-    @OneToOne
-	@JoinColumn(name="idAdministradorGrupo")
-     private AdministradorGrupo administradorGrupo;
+   
 	public String getNome() {
 		return nome;
 	}
@@ -48,12 +46,7 @@ public class Grupo {
 	public void setIdGrupo(int idGrupo) {
 		this.idGrupo = idGrupo;
 	}
-	public AdministradorGrupo getAdministradorGrupo() {
-		return administradorGrupo;
-	}
-	public void setAdministradorGrupo(AdministradorGrupo administradorGrupo) {
-		this.administradorGrupo = administradorGrupo;
-	}
+	
 	
 	
 	

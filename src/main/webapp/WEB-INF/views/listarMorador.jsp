@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html ng-app="listarmorador">
@@ -30,8 +30,7 @@
 <td>{{mora.telefoneMorador}}</td>
 <td>{{mora.emailMorador}}</td>
 <td>{{mora.bairroEnderecoMorador}}</td>
-<td > <a  href="alterarmorador?numero={{mora.idMorador}}"><button class=" btn btn-warning" > Alterar</button></a><td>
-<td> <a  href="excluirmorador?numero={{mora.idMorador}}"><button class=" btn btn-danger" > Excluir</button></a></td>
+<td> <a  href="ecluirMoradorPAD/{{mora.idMorador}}"><button class=" btn btn-danger" > Excluir</button></a></td>
 </tr>
 </table>
 

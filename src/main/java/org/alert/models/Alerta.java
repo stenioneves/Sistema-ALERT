@@ -26,6 +26,8 @@ public class Alerta {
 	@JoinColumn(name="idMoradorAdministradorGrupo")
 	private AdministradorGrupo administradorGrupo;
 	
+	private Boolean exibicao;
+	
 	
 	public Date getDataPublicacao() {
 		return dataPublicacao;
@@ -39,6 +41,24 @@ public class Alerta {
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
+	public Boolean getExibicao() {
+		return exibicao;
+	}
+	public void setExibicao(Boolean exibicao) {
+		this.exibicao = exibicao;
+	}
+	public int getIdpublicacao() {
+		return idpublicacao;
+	}
+	public void setIdpublicacao(int idpublicacao) {
+		this.idpublicacao = idpublicacao;
+	}
+	public AdministradorGrupo getAdministradorGrupo() {
+		return administradorGrupo;
+	}
+	public void setAdministradorGrupo(AdministradorGrupo administradorGrupo) {
+		this.administradorGrupo = administradorGrupo;
+	}
 	
-
+   
 }
